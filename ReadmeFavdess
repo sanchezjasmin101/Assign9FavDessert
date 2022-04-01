@@ -1,0 +1,21 @@
+---
+title: "FavDessert"
+output: html_document
+---
+
+```{r}
+#1. I first created my dessert in Excel and then downloaded the data in "CSV" format in my laptop
+#loaded the data onto R
+FavDes <- read.csv("~/Desktop/FavDessert.csv")
+#Summarized the favorite dessert column
+summary(FavDes$Favorite.Dessert)
+#summariezed the rating column
+summary(FavDes$Rating)
+#summarized teh quantity column
+summary(FavDes$Quantity)
+#loaded ggplot to create a graph
+library(ggplot2)
+#created a scaterd plot
+ggplot(FavDes, aes(Favorite.Dessert, Quantity, color = Rating))+ geom_point(shape = 8)+theme_classic()
+```
+
